@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:fresco="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/name"
@@ -31,6 +31,22 @@
         android:text="speciality" />
 
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        android:max="5"
+        android:layout_below="@+id/esp"
+        android:numStars="5"
+        android:paddingLeft="10dp"
+        android:rating="2.0"
+        android:layout_alignParentLeft="true"
+        android:stepSize="1.0" />
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/profileImage"
@@ -40,7 +56,6 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="10dp"
-        fresco:placeholderImage="@drawable/profile_placeholder"
-        />
+        fresco:placeholderImage="@drawable/profile_placeholder" />
 
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -71,6 +72,11 @@ public class HomeDataAdapter extends RecyclerView.Adapter<HomeDataAdapter.NewsVi
             holder.doctorSpeciality.setText(speciality.toString());
         }
 
+        if (dataModel.getRating()!=null && dataModel.getRating().length()>0){
+
+            holder.ratingBar.setRating(Float.parseFloat(dataModel.getRating()));
+        }
+
         if (dataModel.getLinks() != null && dataModel.getLinks().size() >= 12) {
             String picUrl = dataModel.getLinks().get(11).getHref();
             if (!picUrl.contains("jpg")) {
@@ -118,6 +124,9 @@ public class HomeDataAdapter extends RecyclerView.Adapter<HomeDataAdapter.NewsVi
 
         @BindView(R.id.profileImage)
         SimpleDraweeView profileImage;
+
+        @BindView(R.id.ratingBar)
+        RatingBar ratingBar;
 
         public NewsViewHolder(View itemView) {
             super(itemView);
